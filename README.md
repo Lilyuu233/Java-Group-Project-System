@@ -1,104 +1,61 @@
-# Team 6 Project: Compression Optimisation for Intelligent Plant!
+# Intelligent Plant: Compression Optimisation
 
-![Intelligent Plant Logo](./assets/intelligentPlanticon.png)
+[![React](https://img.shields.io/badge/Frontend-React-blue)](https://reactjs.org/)
+[![Azure](https://img.shields.io/badge/Cloud-Azure_Serverless-0078D4)](https://azure.microsoft.com/)
+[![Terraform](https://img.shields.io/badge/IaC-Terraform-623CE4)](https://www.terraform.io/)
+[![Python](https://img.shields.io/badge/Optimisation-Python_Scikit--Learn-yellow)]()
+[![C#](https://img.shields.io/badge/Algorithm-C%23_.NET-green)]()
 
+> **An industrial-grade application developed for the Intelligent Plant Industrial App Store.**
+> * **Project Type:** Software Engineering Group Project (University of Nottingham)
+> * **Industry Partner:** Intelligent Plant
+> * **Role:** Frontend Lead & UI/UX Developer
 
-###  Team Members
-- [Mayukhi Panda](./assets/CVs/MayukhiPanda-CV.pdf) (`psymp19`)
-- [Kasia Sosin](./assets/CVs/KasiaSosin-CV.pdf) (`psyks18`)
-- [Frazer Mills](./assets/CVs/FrazerMills-CV.pdf) (`psyfm5`)
-- [Libing Kuang](./assets/CVs/LibingKuang-CV.pdf) (`ssylk2`)
-- [Brendan Boyce](./assets/CVs/BrendanBoyce-CV.pdf) (`efybb5`)
-- [Lucas Panjaitan](./assets/CVs/LucasPanjaitan-CV.pdf) (`psylp4`)
-- [Sai Dilip](./assets/CVs/SaiDilip-CV.pdf) (`efysd6`)
-- [Will Wright](./assets/CVs/WillWright-CV.pdf) (`psysw14`)
+## Project Overview
 
-### Team Manifesto
-[Click here to see our team manifesto](./documentation/teamManifesto.md)
+**Compression Optimisation** is a full-stack web application designed to solve the challenge of storing massive amounts of Industrial IoT (IIoT) time-series data. It allows engineers to:
 
-### Meetings
-[Click here for key info regarding times and dates of meetings](./meeting_notes/WeeklyMeetingInfo.md)
+1.  **Compress Data:** Reduce storage costs and transmission time using a bespoke compression algorithm (Swinging Door / Box Car variants).
+2.  **Optimise Parameters:** Automatically calculate the "sweet spot" for compression settings (balancing data fidelity vs. file size) using a **Grid Search optimisation algorithm**.
+3.  **Visualise Results:** View real-time interactive charts comparing raw vs. compressed data to verify accuracy.
 
-### Links and Resources
-[Click here for key project info from links sent by Intelligent Plant](./meeting_notes/JoshInfo.md) <br>
-[Click here for link to the Jira page](https://team6-compression-optimisation.atlassian.net/jira/software/projects/SCRUM/boards/1) <br>
+This project was developed using **Agile Scrum** methodology and integrates directly with the **Intelligent Plant Industrial App Store API**.
 
-### Documentation
+## System Architecture
 
-#### Meetings
+The system utilizes a **Serverless Microservices Architecture** hosted on **Microsoft Azure**, provisioned entirely via **Terraform (Infrastructure as Code)**.
 
-##### Semester 1
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | React.js, Chart.js | Hosted on Azure Static Web Apps. Provides data visualisation and configuration UI. |
+| **Infrastructure** | Terraform | Manages all Azure resources (Resource Groups, Blob Storage, Functions) as code. |
+| **Compression Engine** | C# (.NET 8.0) | Azure Function executing the core compression logic (high performance). |
+| **Optimisation Engine** | Python (Scikit-learn) | Azure Function running Grid Search to find optimal compression parameters. |
+| **Storage** | Azure Blob & Table Storage | Stores raw/compressed datasets and user configuration history. |
 
-|         #         | Date     | Description            |
-| ----------------- | -----    | -----------            |
-| [Week 1 : Meeting 1](./meeting_notes/Week1Meeting1.md)| 30/09/24 | Initial team meetup    |
-| [Week 1 : Meeting 2](./meeting_notes/Week1Meeting2.md)| 02/10/24 | Shortlisting projects  |
-| [Week 2 : Meeting 1](./meeting_notes/Week2Meeting1.md)| 10/10/24 | Worked on EOIs         |
-| [Week 2 : Meeting 2](./meeting_notes/Week2Meeting2.md)| 12/10/24 | Peer review EOIs       |
-| [Week 3 : Meeting 1](./meeting_notes/Week3Meeting1.md)| 16/10/24 | Pitch Day preparation  |
-| [Week 4 : Meeting 1](./meeting_notes/Week4Meeting1.md)| 24/10/24 | Project assignment discussion |
-| [Week 5 : Meeting 1](./meeting_notes/Week5Meeting1.md)| 29/10/24 | Project Kickoff Meeting|
-| [Week 5 : Meeting 2](./meeting_notes/Week5Meeting2.md)| 31/10/24 | Project details read-through |
-| [Week 6 : Meeting 1](./meeting_notes/Week6Meeting1.md)| 04/11/24 | Discussion of project details and Git conventions |
-| [Week 6 : Meeting 2](./meeting_notes/Week6Meeting2.md)| 07/11/24 | Start of 1st sprint |
-| [Week 7 : Meeting 1](./meeting_notes/Week7Meeting1.md)| 11/11/24 | Catchup before industry meeting |
-| [Week 7 : Meeting 2](./meeting_notes/Week7Meeting2.md)| 12/11/24 | Industry Meeting |
-| [Week 7 : Meeting 3](./meeting_notes/Week7Meeting3.md)| 14/11/24 | End of 1st sprint |
-| [Week 8 : Meeting 1](./meeting_notes//Week8Meeting1.md) | 18/11/24 | Started work on test plans | 
-| [Week 8 : Meeting 2](./meeting_notes/Week8Meeting2.md) | 21/11/24 | Worked on test plans/tests |
-| [Week 9 : Meeting 1](./meeting_notes/Week9Meeting1.md) | 25/11/24 | Worked on test writing |
-| [Week 9 : Meeting 2](./meeting_notes/Week9Meeting2.md) | 26/11/24 | Industry Meeting |
-| [Week 9 : Meeting 3](./meeting_notes/Week9Meeting3.md) | 28/11/24 | Finishing tests and report writing |
-| [Week 10 : Meeting 1](./meeting_notes/Week10Meeting1.md) | 2/12/24 | Worked on prototypes |
-| [Week 10 : Meeting 2](./meeting_notes/Week10Meeting2.md) | 5/12/24 | Worked on report and prototypes |
-| [Week 11 : Meeting 1](./meeting_notes/Week11Meeting1.md) | 9/12/24 | Worked on report and prototypes |
-| [Week 11 : Meeting 2](./meeting_notes/Week11Meeting2.md) | 10/12/24 | Final industry meeting (before xmas) |
-| [Week 11 : Meeting 3](./meeting_notes/Week11Meeting3.md) | 12/12/24 | Final group meeting (before xmas) |
+## Screenshots
+<img width="776" height="449" alt="image" src="https://github.com/user-attachments/assets/eafcc17b-c8aa-4ad7-a406-9bab15416229" />
 
+## My Contributions
 
-##### Semester 2
+As the **Frontend Lead / UI Developer** (and contributor to Testing), my specific contributions included:
 
-|         #         | Date     | Description            |
-| ----------------- | -----    | -----------            |
-| [Week 12 : Meeting 1](./meeting_notes/Week12Meeting1.md) | 28/1/25 | First meeting back of term |
-| [Week 12 : Meeting 2](./meeting_notes/Week12Meeting2.md) | 31/1/25 | Lab work in subteams |
-| [Week 13 : Meeting 1](./meeting_notes/Week13Meeting1.md) | 07/2/25 | Lab work in subteams |
-| [Week 14 : Meeting 1](./meeting_notes/Week14Meeting1.md) | 10/2/25 | Industry Meeting |
-| [Week 14 : Meeting 2](./meeting_notes/Week14Meeting2.md) | 13/2/25 | Check-in with academic supervisor |
-| [Week 14 : Meeting 3](./meeting_notes/Week14Meeting3.md) | 14/2/25 | Lab work |
-| [Week 15 : Meeting 1](./meeting_notes/Week15Meeting1.md) | 17/2/25 | Work in subteams |
-| [Week 15 : Meeting 2](./meeting_notes/Week15Meeting2.md) | 21/2/25 | Lab work on UI and Compression |
-| [Week 16 : Meeting 1](./meeting_notes/Week16Meeting1.md) | 24/2/25 | Feedback from Industry |
-| [Week 16 : Meeting 2](./meeting_notes/Week16Meeting2.md) | 28/2/25 | Updating academic supervisor |
-| [Week 17 : Meeting 1](./meeting_notes/Week17Meeting1.md) | 03/3/25 | Progress Discussion |
-| [Week 17 : Meeting 2](./meeting_notes/Week17Meeting2.md) | 07/3/25 | Prep for industry meeting |
-| [Week 18 : Meeting 1](./meeting_notes/Week18Meeting1.md) | 10/3/25 | Feedback from industry |
-| [Week 18 : Meeting 2](./meeting_notes/Week18Meeting2.md) | 11/3/25 | Progress update with academic supervisor |
-| [Week 18 : Meeting 3](./meeting_notes/Week18Meeting3.md) | 14/3/25 | Start of new sprint |
-| [Week 19 : Meeting 1](./meeting_notes/Week19Meeting1.md) | 17/3/25 | Progress with compression & UI |
-| [Week 19 : Meeting 2](./meeting_notes/Week19Meeting2.md) | 21/3/25 | Progress with compression & UI |
+* **UI Architecture:** Designed and implemented the modular React interface, including the **Data Source Selection**, **Configuration Panel**, and **History Sidebar**.
+* **Data Visualisation:** Implemented high-performance interactive charts using **Chart.js** to handle and render thousands of industrial data points smoothly.
+* **Testing Strategy:** Established the frontend testing framework using **Jest** and **React Testing Library**. Wrote unit tests for components to verify metric calculations and edge cases (e.g., empty datasets).
+* **Integration:** Collaborated with the backend team to connect the React frontend with Azure Functions and the Optimisation API.
 
+## Key Features
 
+* **Automatic Optimisation:** Uses a Python-based Grid Search to recommend the best deviation limits and exception filters.
+* **Cloud-Native:** Fully serverless backend ensuring scalability and cost-efficiency.
+* **Historical Configurations:** Users can save, load, and manage previous compression setups via Azure Table Storage.
+* **Real-time Metrics:** Instantly calculates Compression Ratio, Storage Savings, and Error Rate.
 
+## Installation & Setup
 
-#### Requirements and Specifications Table
-
-|         #                                                    | Date            | Description            |
-| -----------------                                            | -----           | -----------            |
-| [Personas](./documentation/personas.md)                      |   14/11/24      |  Description of potential users of the system      |
-| [User Stories](./documentation/user_stories.md)              |   14/11/24      |  Defined usages of the system      |
-| [Use Case Diagram](./documentation/use_case_diagram.png)     |   14/11/24      |  Usages of system shown diagramatically      |
-| [Activity Diagram](./documentation/activity_diagram.png)     |   14/11/24      |  Diagram showing the break-down of the system   |
-
-
-#### Reports & Notes
-
-|           #                                                    |               Date            |       Description         |
-| -----------------                                              |               -----           | -----------               |
-| [Interim Report Notes](./documentation/Interim_Report_Notes.md)|               25/11/24        |   Notes for interim report       |
-
-
-
-#### Test Plan
-
-[Link to test plan markdown](./documentation/test_plan.md)
+### Prerequisites
+* Node.js (v16+)
+* Python 3.9+
+* .NET SDK 8.0
+* Azure CLI & Terraform
