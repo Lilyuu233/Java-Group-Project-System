@@ -1,0 +1,6 @@
+scikit-learn
+requests
+flask
+flask-cors
+azure-storage-blob
+gunicorn
