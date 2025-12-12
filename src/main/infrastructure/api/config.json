@@ -1,0 +1,12 @@
+{
+  "app": {
+    "id": "7341abc5237c43eeb5014e7132f41a6a",
+    "secret": "pt84Q0nwpwKuHmqHndxdRBvXKwwAu0yBPeVpjPeSYpM"
+  },
+  "app_store": {
+    "base_url": "https://appstore.intelligentplant.com/"
+  },
+  "data_core": {
+    "base_url": "https://api.intelligentplant.com/datacore/"
+  }
+}
